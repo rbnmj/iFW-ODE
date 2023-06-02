@@ -4,7 +4,6 @@ from matplotlib import pyplot as plt
 from matplotlib import cm as cm
 from matplotlib.widgets import Slider, Button
 
-
 class RosenzweigMacArthur:
     # define starting conditions (var0 = densities at start, t = time frame)
     def __init__(self, var0, t):
@@ -28,6 +27,13 @@ class RosenzweigMacArthur:
     # integrate and write solution into empty list
     def _callplot(self):
         self.fig, self.ax = plt.subplots()
+        # set starting parameters
+        r0 = 1
+        a0 = 0.5
+        c0 = 0.25
+        d0 = 0.1
+        h0 = 1.5
+        K0 = 6
         var = []  # empty array for results/densities
 
         # differential equation, densities at start, time frame, starting values for r, a, c & d

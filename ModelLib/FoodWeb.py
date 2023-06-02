@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 from matplotlib import cm as cm
 from matplotlib.widgets import Slider, Button, TextBox
 
-class PatternFoodweb:
+class FoodWeb:
     # define starting conditions (var0 = densities at start, t = time frame)
     def __init__(self, var0, t):
         self._var0 = var0
@@ -15,6 +15,20 @@ class PatternFoodweb:
 
     # define equations for lotka volterra dynamics
     def _equations(self, var, t, d_Hmax1, d_Hmax2, k_1, k_2):
+        # set parameters
+        S = 4.8  # Nutrient supply concentration
+        D = 0.3  # Dilution rate
+        N_h = 1.5  # half saturation constant for nutrient uptake
+        r_max = 0.7  # growth rate of autotroph
+        h = 0.53  # handling time
+        e = 0.33  # conversion efficiency of competitor
+        d_N = 1  # Dispersal rate of nutrients
+        d_A = 0.001  # dispersal rate of autotrophs
+
+        # competitiveness
+        a_1 = 1  # attack rate of competitor 1
+        a_2 = 1  # attack rate of competitor 2
+
         # fill var
         N_a = var[0]
         N_b = var[1]
@@ -70,6 +84,23 @@ class PatternFoodweb:
         self.ax1.set_facecolor('whitesmoke')
         self.ax2.set_facecolor('whitesmoke')
         self.fig.set_facecolor('whitesmoke')
+
+
+
+        # adaptability
+        k_1 = 0  # dispersal adaptability of competitor 1
+        k_2 = 0  # dispersal adaptability of competitor 2
+        # 0 = random dispersal, 2 = adaptive dispersal
+
+        # dispersal speed
+        d_Hmax1 = 10  # maximal dispersal rates of competitor 1
+        d_Hmax2 = 0.01  # maximal dispersal rates of competitor 2
+
+        # time series
+        t_end = 400
+        number_steps = 20000
+        t = np.linspace(0, t_end, number_steps)
+
         var = []  # empty array for results/densities
 
         # integration of differential equation /w time frame, initial parameters and densities 
@@ -147,36 +178,11 @@ class PatternFoodweb:
         self._d2textbox.set_val('0.01')
 
 if __name__ == "__main__":
-    # set parameters
-    S = 4.8  # Nutrient supply concentration
-    D = 0.3  # Dilution rate
-    N_h = 1.5  # half saturation constant for nutrient uptake
-    r_max = 0.7  # growth rate of autotroph
-    h = 0.53  # handling time
-    e = 0.33  # conversion efficiency of competitor
-    d_N = 1  # Dispersal rate of nutrients
-    d_A = 0.001  # dispersal rate of autotrophs
 
-    # competitiveness
-    a_1 = 1  # attack rate of competitor 1
-    a_2 = 1  # attack rate of competitor 2
 
-    # adaptability
-    k_1 = 0  # dispersal adaptability of competitor 1
-    k_2 = 0  # dispersal adaptability of competitor 2
-    # 0 = random dispersal, 2 = adaptive dispersal
-
-    # dispersal speed
-    d_Hmax1 = 10  # maximal dispersal rates of competitor 1
-    d_Hmax2 = 0.01  # maximal dispersal rates of competitor 2
-
-    # time series
-    t_end = 400
-    number_steps = 20000
-    t = np.linspace(0, t_end, number_steps)
 
     # set starting conditions (densities at t0 and time frame)
-    interactiveLV = PatternFoodweb(
+    interactiveLV = FoodWeb(
         [2, 2.5, 2.5, 2, 0.08, 0.4, 0.05, 0.1], np.arange(0, 1000, 1))
 
     # display all open figures
