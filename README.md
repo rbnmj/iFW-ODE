@@ -11,3 +11,5 @@ iPM-ODE is written in Python 3.11 and requires the following packages:
 
 # Usage
 Simply running `iPM-ODE.py` will show a model selector. Selecting a model will open the corresponding interactive time series. Important parameters can be modified via sliders and text boxes and time series will adjust automatically.
+
+Alternatively, standalone models can be run directly, bypassing the model selecter. This offers no additional functionality it is rather used as an model archive.
