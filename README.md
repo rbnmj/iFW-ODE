@@ -1,15 +1,12 @@
 # iPM-ODE
-iPM-ODE is a simple Python applet for interactive use of population models based on differential equations. Important model parameters can be modified on the fly by updating simulation results.  
-The applet is still very much a work in progress but completely functional for Lotka-Volterra (`interactiveLV.py`), Rosenzweig-Macarthur (`interactiveRM.py`) and one example for a more extended food web (`interactiveFoodWeb.py`).  
-iPM-ODE is designed for research and education simultaneously and the extension of the app with custom models is very straightforward.
+iPM-ODE is a simple Python applet for interactive use of population models based on differential equations. Important model parameters can be modified on the fly and updated simulation results are displayed in real time.  
+The applet is still very much a work in progress but completely functional for Lotka-Volterra, Rosenzweig-Macarthur and for one example of a more extended food web.  
+iPM-ODE is designed for research and education simultaneously and extension of the app with custom models is very straightforward.
 
 # Requirements 
-iPM-ODE is written in Python 3.11 and requires the following packages:
-- numpy
-- scipy
-- matplotlib
+iPM-ODE is written in Python 3.11 and only requires the packages [numpy](https://numpy.org/), [scipy](https://scipy.org/), and [matplotlib](https://matplotlib.org/) to run.
 
 # Usage
-Simply running `iPM-ODE.py` will show a model selector. Selecting a model will open the corresponding interactive time series. Important parameters can be modified via sliders and text boxes and time series will adjust automatically.
+Simply running `iPM-ODE.py` will show a model selector. Selecting a model will open the corresponding interactive time series. Important parameters can be modified via sliders or text boxes and time series will adjust automatically.
 
-Alternatively, standalone models can be run directly, bypassing the model selector. This offers no additional functionality it is rather used as an model archive.
+Alternatively, standalone models can be run directly from `/StandaloneModels/`, bypassing the model selector. While this offers no additional functionality, it is helpful for quick access to the model library.
