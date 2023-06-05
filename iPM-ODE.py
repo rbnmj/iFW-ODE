@@ -9,7 +9,7 @@ from ModelLib.FoodWeb import FoodWeb
 
 class FullWidget:
     def __init__(self):
-        self.model_selection_axes = plt.axes([0.1, 0.7, 0.2, 0.15])
+        self.model_selection_axes = plt.axes()
         self.model_selection_radios = RadioButtons(self.model_selection_axes, 
                                                    ["Lotka-Volterra Predator Prey", 
                                                     "Rosenzweig-MacArthur Predator Prey",
