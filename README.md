@@ -5,9 +5,9 @@ iPM-ODE is designed for research and education simultaneously and the extension 
 
 # Requirements 
 iPM-ODE is written in Python 3.11 and requires the following packages:
-- numpy
-- scipy
-- matplotlib
+* numpy
+* scipy
+* matplotlib
 
 # Usage
 Simply running `iPM-ODE.py` will show a model selector. Selecting a model will open the corresponding interactive time series. Important parameters can be modified via sliders and text boxes and time series will adjust automatically.
