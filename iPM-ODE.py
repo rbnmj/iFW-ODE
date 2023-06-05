@@ -18,12 +18,15 @@ class FullWidget:
 
     def run_model(self, modeltype):
         if modeltype == "Rosenzweig-MacArthur Predator Prey":
-            LotkaVolterra([0.5, 1.], np.arange(0, 100, 1))
-            plt.show()
-        elif modeltype == "Lotka-Volterra Predator Prey":
+            #plt.close("all")
             RosenzweigMacArthur([0.1, 0.1], np.arange(0, 1000, 1))
             plt.show()
+        elif modeltype == "Lotka-Volterra Predator Prey":
+            #plt.close("all")
+            LotkaVolterra([0.5, 1.], np.arange(0, 100, 1))
+            plt.show()
         elif modeltype == "Food Web Model":
+            #plt.close("all")
             FoodWeb([2, 2.5, 2.5, 2, 0.08, 0.4, 0.05, 0.1], np.arange(0, 1000, 1))
             plt.show()
 
