@@ -3,7 +3,7 @@ iPM-ODE is a simple Python applet for interactive use of population models based
 The applet is still very much a work in progress but completely functional for Lotka-Volterra, Rosenzweig-Macarthur and for one example of a more extended food web.  
 iPM-ODE is designed for research and education simultaneously and extension of the app with custom models is very straightforward.  
 
-![Food Web Model Screenshot](https://raw.githubusercontent.com/rbnmj/iPM-ODE/master/.github/images/screenshot.png)
+![Food Web Model Screenshot](https://user-images.githubusercontent.com/122864139/243804000-f07f74b2-9c7d-4851-8d6a-dae489e8df04.png)
 
 # Requirements 
 iPM-ODE is written in Python 3.11 and only requires the packages [numpy](https://numpy.org/), [scipy](https://scipy.org/), and [matplotlib](https://matplotlib.org/) to run.
